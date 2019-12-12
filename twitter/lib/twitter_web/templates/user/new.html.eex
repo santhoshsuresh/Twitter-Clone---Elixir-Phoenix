@@ -1,0 +1,66 @@
+<div class="login-form" id="form">
+    <div class="alert alert-danger" id="alert">
+        <p>User Exists</p>
+    </div>
+    <h3 class="modal-title text-center bold">Create User</h3>       
+    <br>
+    <div class="form-group">
+        <input type="text" id="uname" class="form-control" placeholder="Enter Name" required="required">
+    </div>
+    <div class="form-group">
+        <input type="password" id="pass" class="form-control" placeholder="Enter Password" required="required">
+    </div>
+    <div class="form-group">
+        <input type="email" id="email" class="form-control" placeholder="Enter Email">
+    </div>
+    <div class="form-group">
+        <button type="submit" id="createuser" class="btn btn-primary btn-md btn-block">Create User</button>
+    </div>   
+    <div class="clearfix">
+        <%= link "Back to Login Page", to: "/", class: "pull-center" %>
+    </div>
+</div>
+
+<script>
+window.channelRoomId = "<%= @user_id %>"
+document.getElementById("alert").style.display = 'none'
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background-image: url('http://getwallpapers.com/wallpaper/full/4/b/a/573224.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+}
+
+.login-form {
+    width: 400px;
+    padding: 40px;
+    margin: 100px auto;
+    background-color: lightblue ;
+}
+
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+}
+
+h3 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: blue ;
+    border-color: #2e6da4;
+    color: white;
+}
+</style>

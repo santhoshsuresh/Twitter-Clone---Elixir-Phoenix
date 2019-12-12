@@ -1,0 +1,68 @@
+<script>window.UserName = "<%= @user %>"</script>
+
+<div class="login-form" id="form">
+
+<div class="alert alert-danger" id="alert">
+    <span id="alertmsg"> </span>
+</div>
+  Need to simulate multiple users<%= link "Click here", to: "/admin", class: "btn btn-link btn-md", target: "_blank" %>
+
+  <h3 class="modal-title text-center bold">Welcome to Twitter</h3>       
+  <br>
+  <div class="form-group">
+      <input type="text" id="uname" class="form-control" placeholder="Username" required="required">
+  </div>
+  <div class="form-group">
+      <input type="password" id="pass" class="form-control" placeholder="Password" required="required">
+  </div>
+  <div class="form-group">
+      <button type="submit" id="login" class="btn btn-primary btn-md btn-block">Log in</button>
+      <%= link "Sign Up", to: "/user/new", class: "btn btn-secondary btn-md btn-block" %>
+  </div>
+  <div class="clearfix">
+      <a href="#" class="pull-center">Forgot Password?</a>
+  </div>     
+</div>
+
+<script>
+    document.getElementById("alert").style.display = 'none'
+</script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Numans');
+
+    html,body{
+    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    }
+
+    .login-form {
+        width: 400px;
+        padding: 30px;
+        margin: 150px auto;
+        background-color: white ;
+    }
+
+    .modal-title {
+        margin: 0;
+        line-height: 1.42857143;
+    }
+
+    h3 {
+        display: block;
+        margin-block-start: 1.33em;
+        margin-block-end: 1.33em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+
+    .btn-secondary {
+        background-color: green ;
+        border-color: #2e6da4;
+        color: white;
+    }
+</style>

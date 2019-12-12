@@ -1,0 +1,92 @@
+<script>window.UserName = "<%= @user %>"</script>
+<div class="page">
+    <br>
+    <div class="form-group">
+        <input type="text" id="count" placeholder="Enter user count" required>
+        <button type="submit" id="user_count" class="btn btn-secondary btn-sm">
+        <span class="glyphicon glyphicon-plus"></span> Create users</button>
+    </div>
+    <div class="clearfix">
+        <%= link "Back to Login Page", to: "/", class: "pull-center" %>
+    </div>
+    <hr>
+    <h4 class="modal-title text-left bold"> Available Users</h4> 
+    <h5 class="modal-title text-left bold"> There are <%= Enum.count(@list) %> users available </h5> 
+    
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table class="table table-bordered table-hover table-striped table-sm">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%= for user <- @list do %>
+                    <tr>
+                        <td><%= user %></td>
+                        <td><%= user<>"@twitter.com" %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background-image: url('http://getwallpapers.com/wallpaper/full/4/b/a/573224.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+}
+
+.page{
+    background-color:white;
+    padding: 15px;
+    width: 80vw;
+    left: 50%;
+    right: 50%;
+    position: relative;
+    margin-left: -40vw;
+    margin-top:3vw;
+}
+
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+}
+
+h3 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.btn-secondary {
+    background-color: darkorange;
+    color:white;
+}
+
+.table {
+    max-width: 60%;
+}
+
+.my-custom-scrollbar {
+position: relative;
+height: 450px;
+overflow: auto;
+}
+.table-wrapper-scroll-y {
+display: block;
+}
+
+</style>

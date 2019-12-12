@@ -1,0 +1,101 @@
+<script>window.UserName = "<%= @user %>"</script>
+<div class="page">
+    <h3 class="modal-title text-left bold">Welcome <%= @user %>! </h3>  
+    <br>
+    <button type="submit" class="btn btn-primary" id="dashboard">Dash Board</button>
+    <button type="button" class="btn btn-default" id="followers">Followers</button>
+    <button type="button" class="btn btn-default" id="about">About</button>
+    <br> <br>
+    <div class="form-group">
+        <textarea rows="2" cols="60"> </textarea>
+        <br>
+        <a href="#" class="btn btn-secondary btn-sm">
+            <span class="glyphicon glyphicon-send"></span>
+            Tweet
+        </a>
+    </div>
+    <div class="form-group has-search">
+        <div class="input-group">
+            <input class="form-control" placeholder="Search for Tweets" id="srch-term" type="text">
+            <div class="input-group-btn pull-center">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <%= for tweet <- @tweets do %>
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h4 class="card-subtitle mb-2 text-muted">Card subtitle</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <button type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-thumbs-up"></span> Like
+                </button>
+                <button type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-retweet"></span> Retweet
+                </button>
+            </div>
+        <% end %>
+    </div>
+
+</div>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background-image: url('http://getwallpapers.com/wallpaper/full/4/b/a/573224.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+}
+
+.page{
+    background-color:white;
+    padding: 15px;
+    width: 80vw;
+    left: 50%;
+    right: 50%;
+    position: relative;
+    margin-left: -40vw;
+    margin-top:3vw;
+}
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+}
+
+h3 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.btn-secondary {
+    background-color: green;
+    color:white;
+}
+</style>
