@@ -58,7 +58,7 @@ defmodule TwitterWeb.Endpoint do
     :ets.new(:user_follower, [:set, :public, :named_table]);
 
     table = :ets.new(:table, [:named_table,:public])
-    :ets.insert(table,{"Total Users",0})
+    :ets.insert(table,{"Tweet count",0})
     # :ets.new(:user_sockets, [:set, :public, :named_table]);
 
     if config[:load_from_system_env] do
