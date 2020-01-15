@@ -22,7 +22,7 @@
 </div>
 
 <script>
-window.channelRoomId = "<%= @user_id %>"
+window.UserName = "<%= @user_id %>"
 document.getElementById("alert").style.display = 'none'
 </script>
 
@@ -30,7 +30,7 @@ document.getElementById("alert").style.display = 'none'
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url('http://getwallpapers.com/wallpaper/full/4/b/a/573224.jpg');
+background-image: url('https://www.graciaviva.cat/png/big/11/118843_twitter-background-pics.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;

@@ -4,24 +4,11 @@ defmodule TwitterWeb.TweetController do
   def home(conn, %{"user" => user}) do
     user_exists = :ets.lookup(:user, user)
     if user_exists != [] do
-      content = get_tweets(user)
-      render conn, "home.html", user: user, tweets: content
+      render conn, "home.html", user: user
     else
       conn
       |> put_flash(:error, "User doesnt exist")
       |> redirect(external: "/")
-    end
-  end
-
-  def get_tweets(user) do
-    tweets_ids = :ets.lookup(:user_tweet, user)
-    if tweets_ids == [] do
-      []
-    else
-      ord_tweets = Enum.sort(tweets_ids, &(&1 >= &2))
-      Enum.each(ord_tweets, fn tweet ->
-        :ets.lookup(:tweet, tweet)
-      end)
     end
   end
 

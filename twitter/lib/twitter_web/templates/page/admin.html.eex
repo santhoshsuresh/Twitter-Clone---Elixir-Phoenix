@@ -1,17 +1,47 @@
-<script>window.UserName = "<%= @user %>"</script>
+<script>window.UserName = "<%= @user %>"
+window.Result = "<%= @list %>" </script>
 <div class="page">
     <br>
+    <%= if @list == [] do %>
     <div class="form-group">
         <input type="text" id="count" placeholder="Enter user count" required>
         <button type="submit" id="user_count" class="btn btn-secondary btn-sm">
         <span class="glyphicon glyphicon-plus"></span> Create users</button>
     </div>
+    <% end %>
+    
     <div class="clearfix">
         <%= link "Back to Login Page", to: "/", class: "pull-center" %>
     </div>
     <hr>
-    <h4 class="modal-title text-left bold"> Available Users</h4> 
+    
+    <%= if @display do %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"> Metrics</th>
+                    <th scope="col"> Value</th>
+                </tr>
+                </thead>
+            <tbody>
+                <tr>
+                    <th scope="row"> Total Number of Users</th>
+                    <td><%= @usercount %></td>
+                </tr>
+                <tr>
+                    <th scope="row"> Total number of tweets</th>
+                    <td><%= @tweetcount %></td>
+                </tr>
+                <tr>
+                    <th scope="row"> Total time taken </th>
+                    <td><%= @time %>ms</td>
+                </tr>
+            </tbody>
+        </table>
+    <% end %>
+
     <h5 class="modal-title text-left bold"> There are <%= Enum.count(@list) %> users available </h5> 
+    <h4 class="modal-title text-left bold"> Available Users</h4> 
     
     <div class="table-wrapper-scroll-y my-custom-scrollbar">
         <table class="table table-bordered table-hover table-striped table-sm">

@@ -52,14 +52,16 @@ defmodule TwitterWeb.Endpoint do
     :ets.new(:user_tweet, [:set, :public, :named_table]);
     :ets.new(:user, [:set, :public, :named_table]);
     :ets.new(:tweet, [:set, :public, :named_table]);
+    :ets.new(:user_retweet, [:set, :public, :named_table]);
     :ets.new(:mention_tweet, [:set, :public, :named_table]);
     :ets.new(:hashtag_tweet, [:set, :public, :named_table]);
     :ets.new(:user_following, [:set, :public, :named_table]);
     :ets.new(:user_follower, [:set, :public, :named_table]);
+    :ets.new(:user_fav, [:set, :public, :named_table]);
 
     table = :ets.new(:table, [:named_table,:public])
     :ets.insert(table,{"Tweet count",0})
-    # :ets.new(:user_sockets, [:set, :public, :named_table]);
+    :ets.new(:user_sockets, [:set, :public, :named_table]);
 
     if config[:load_from_system_env] do
       port = System.get_env("PORT") || raise "expected the PORT environment variable to be set"

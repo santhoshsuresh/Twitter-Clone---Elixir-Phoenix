@@ -1,5 +1,8 @@
 <script>window.UserName = "<%= @user %>"</script>
 
+<head>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-show-password/1.0.3/bootstrap-show-password.min.js"></script>
+</head>
 <div class="login-form" id="form">
 
 <div class="alert alert-danger" id="alert">
@@ -13,7 +16,7 @@
       <input type="text" id="uname" class="form-control" placeholder="Username" required="required">
   </div>
   <div class="form-group">
-      <input type="password" id="pass" class="form-control" placeholder="Password" required="required">
+      <input type="password" id="pass" class="form-control" placeholder="Password" required="required" data-toggle="password"> 
   </div>
   <div class="form-group">
       <button type="submit" id="login" class="btn btn-primary btn-md btn-block">Log in</button>
@@ -25,14 +28,15 @@
 </div>
 
 <script>
-    document.getElementById("alert").style.display = 'none'
+    document.getElementById("alert").style.display = 'none';
+    $("#pass").password('toggle');
 </script>
 
 <style>
     @import url('https://fonts.googleapis.com/css?family=Numans');
 
     html,body{
-    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+    background-image: url('https://www.graciaviva.cat/png/big/11/118843_twitter-background-pics.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
